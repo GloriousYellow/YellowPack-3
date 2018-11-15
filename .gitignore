@@ -1,0 +1,17 @@
+logs
+resourcepacks
+saves
+screenshots
+texturepacks
+backups
+mts
+local
+*cache.json
+options*
+realms*
+.mixin*
+*.png
+*.dat
+
+mods
+!mods/*.jar
