@@ -13,3 +13,4 @@ realms*
 *.png
 *.dat
 
+!*.jar
