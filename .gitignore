@@ -10,7 +10,6 @@ local
 options*
 realms*
 .mixin*
-*.png
 *.dat
 
 !*.jar
