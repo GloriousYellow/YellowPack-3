@@ -4,7 +4,7 @@ import crafttweaker.oredict.IOreDict as IOreDict;
 import crafttweaker.oredict.IOreDictEntry as IOreDictEntry;
 import mods.jei.JEI.removeAndHide as rh;
 print("--- loading OreDict.zs ---");
-
+	
 # Black Quartz Pillar is cheaper than 1 block, remove from oredict
 	<ore:blockBlackQuartz>.remove(<actuallyadditions:block_misc>);
 	

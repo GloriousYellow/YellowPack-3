@@ -86,23 +86,8 @@ print("--- loading ModularMachinery.zs ---");
     [<actuallyadditions:item_crystal_empowered:1>, <ore:itemPulsatingCrystal>, <actuallyadditions:item_crystal_empowered:1>], 
     [<ore:ingotElectricalSteel>, <ore:ingotPlatinum>, <ore:ingotElectricalSteel>]]);
 
-# Mana In/out Hatch
-    recipes.addShapedMirrored("Mana Output Hatch", 
-    <modulardiversity:blockmanaoutputhatch>, 
-    [[null, <modularmachinery:blockcasing>, null],
-    [<modularmachinery:blockcasing>, <botania:pool>, <modularmachinery:blockcasing>], 
-    [<botania:pump>, <botania:spreader:2>, <botania:pump>]]);
-    
-    recipes.addShapedMirrored("Mana Input Hatch", 
-    <modulardiversity:blockmanainputhatch>, 
-    [[<botania:pump>, <botania:spreader:2>, <botania:pump>],
-    [<modularmachinery:blockcasing>, <botania:pool>, <modularmachinery:blockcasing>], 
-    [null, <modularmachinery:blockcasing>, null]]);
 
     recipes.addShaped("EnergyOutHatch2", <modularmachinery:blockenergyoutputhatch:2>, [[null, <modularmachinery:blockcasing>, null],[<modularmachinery:blockcasing>, <enderio:block_buffer:1>, <modularmachinery:blockcasing>], [null, <actuallyadditions:block_laser_relay>, null]]);
-    recipes.addShaped("EnergyOutHatch3", <modularmachinery:blockenergyoutputhatch:5>, [[null, <modularmachinery:blockcasing>, null],[<modularmachinery:blockcasing>, <modularmachinery:blockenergyoutputhatch:4>, <modularmachinery:blockcasing>], [null, <actuallyadditions:block_laser_relay_extreme>, null]]);
-    recipes.addShaped("EnergyOutHatch4", <modularmachinery:blockenergyoutputhatch:4>, [[null, <modularmachinery:blockcasing>, null],[<modularmachinery:blockcasing>, <modularmachinery:blockenergyoutputhatch:3>, <modularmachinery:blockcasing>], [null, <actuallyadditions:block_laser_relay_advanced>, null]]);
-    recipes.addShaped("EnergyOutHatch5", <modularmachinery:blockenergyoutputhatch:3>, [[null, <modularmachinery:blockcasing>, null],[<modularmachinery:blockcasing>, <modularmachinery:blockenergyoutputhatch:2>, <modularmachinery:blockcasing>], [null, <actuallyadditions:block_laser_relay>, null]]);
 
     recipes.addShaped("EnergyInHatch2", <modularmachinery:blockenergyinputhatch:2>, [[null, <actuallyadditions:block_laser_relay>, null],[<modularmachinery:blockcasing>, <enderio:block_buffer:1>, <modularmachinery:blockcasing>], [null, <modularmachinery:blockcasing>, null]]);
 
@@ -157,9 +142,8 @@ var itemsToRemove = [
     <modularmachinery:blockenergyoutputhatch:4>,
     <modularmachinery:blockenergyoutputhatch:5>,
     <modularmachinery:blockenergyoutputhatch:6>,
-    <modularmachinery:blockenergyoutputhatch:7>,
+    <modularmachinery:blockenergyoutputhatch:7>
 	
-    <modulardiversity:blockjackhatch>
 ] as IItemStack[];
 
 for item in itemsToRemove {

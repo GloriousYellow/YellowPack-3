@@ -4,6 +4,10 @@ import mods.jei.JEI.removeAndHide as rh;
 #modloaded tconstruct
 print("--- loading TinkersConstruct.zs ---");
 
+# Removing Bronze / Steel dupes
+	mods.tconstruct.Melting.removeRecipe(<liquid:bronze>, <ic2:pipe>);
+	mods.tconstruct.Melting.removeRecipe(<liquid:steel>, <ic2:pipe:1>);
+
 # Prevent Smart Output from instantly breaking (setting it to same hardness as Smeltery Controllers)
 	<tinker_io:smart_output>.hardness = <tconstruct:smeltery_controller>.hardness;
 
@@ -35,8 +39,8 @@ print("--- loading TinkersConstruct.zs ---");
 
 # Faster Alumite Alloying
 	mods.tconstruct.Alloy.removeRecipe(<liquid:alumite>);
-	mods.tconstruct.Alloy.addRecipe(<liquid:alumite> * 216, [<liquid:aluminum> * 720, <liquid:iron> * 144,  <liquid:obsidian> * 144]);
-	mods.tconstruct.Alloy.addRecipe(<liquid:alumite> * 432, [<liquid:aluminum> * 1440, <liquid:iron> * 288,  <liquid:obsidian> * 288]);
+	mods.tconstruct.Alloy.addRecipe(<liquid:alumite> * 432, [<liquid:aluminum> * 720, <liquid:iron> * 288,  <liquid:obsidian> * 288]);
+	mods.tconstruct.Alloy.addRecipe(<liquid:alumite> * 864, [<liquid:aluminum> * 1440, <liquid:iron> * 576,  <liquid:obsidian> * 576]);
 
 # Faster Osmiridium Alloying
 	mods.tconstruct.Alloy.removeRecipe(<liquid:osmiridium>);
