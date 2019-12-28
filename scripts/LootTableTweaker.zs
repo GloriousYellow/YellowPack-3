@@ -9,6 +9,7 @@ var itemsToRemove as string[] = [
 	"forestry:kit_pickaxe",
 	"forestry:kit_shovel",
 	
+	"ic2:ingot:1",
 	"ic2:ingot:2",
 	"ic2:ingot:6",
 	"ic2:bronze_pickaxe",
@@ -22,6 +23,11 @@ var itemsToRemove as string[] = [
 	"iceandfire:armor_silver_metal_chestplate",
 	"iceandfire:armor_silver_metal_leggings",
 	"iceandfire:armor_silver_metal_boots",
+	
+	"immersiveengineering:pickaxe_steel",
+	"immersiveengineering:shovel_steel",
+	"immersiveengineering:axe_steel",
+	"immersiveengineering:sword_steel",
 	
 	"minecraft:iron_ingot",
 	"minecraft:gold_ingot",
