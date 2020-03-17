@@ -5,6 +5,13 @@ print("--- loading IceAndFire.zs ---");
 
 # *======= Recipes =======*
 
+# Cockatrice Scepter
+	recipes.addShaped("Cockatrice Scepter", 
+	<iceandfire:cockatrice_scepter>, 
+	[[<ore:boneWither>], 
+	[<iceandfire:cockatrice_eye>], 
+	[<ore:boneWither>]]);
+
 # Bone Conversion 
 	recipes.addShapeless("Dragon Bone Conversion", <minecraft:bone> * 9, [<iceandfire:dragonbone>]);
 	
@@ -62,12 +69,10 @@ print("--- loading IceAndFire.zs ---");
 		<iceandfire:dragonsteel_fire_hoe>,
 		<iceandfire:dragonsteel_fire_pickaxe>,
 		<iceandfire:dragonsteel_fire_shovel>,
-		<iceandfire:dragonsteel_fire_sword>,
 		<iceandfire:dragonsteel_ice_axe>,
 		<iceandfire:dragonsteel_ice_hoe>,
 		<iceandfire:dragonsteel_ice_pickaxe>,
 		<iceandfire:dragonsteel_ice_shovel>,
-		<iceandfire:dragonsteel_ice_sword>,
 		<iceandfire:myrmex_desert_axe>,
 		<iceandfire:myrmex_desert_hoe>,
 		<iceandfire:myrmex_desert_pickaxe>,
@@ -79,7 +84,8 @@ print("--- loading IceAndFire.zs ---");
 		<iceandfire:myrmex_jungle_shovel>,
 		<iceandfire:myrmex_jungle_sword>,
 		<iceandfire:wither_shard>,
-		<iceandfire:silver_ore>
+		<iceandfire:silver_ore>,
+		<iceandfire:cockatrice_scepter>
 	] as IItemStack[];
 	
 	for item in removals {

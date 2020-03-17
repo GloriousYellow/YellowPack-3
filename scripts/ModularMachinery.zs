@@ -47,12 +47,21 @@ print("--- loading ModularMachinery.zs ---");
     [<ic2:overclocked_heat_vent>, <modularmachinery:blockcasing>, <ic2:overclocked_heat_vent>]]);
 
 # Machine Controller
-    recipes.remove(<modularmachinery:blockcontroller>);
-    recipes.addShaped("Modular Controller", 
-    <modularmachinery:blockcontroller>, 
-    [[<forestry:chipsets:1>.withTag({}), <rftools:screen>, <forestry:chipsets:1>.withTag({})],
-    [<modularmachinery:blockcasing>, <appliedenergistics2:controller>, <modularmachinery:blockcasing>], 
-    [null, <modularmachinery:blockcasing>, null]]);
+    if (!isNull(itemUtils.getItem("appliedenergistics2:controller"))) {
+      recipes.remove(<modularmachinery:blockcontroller>);
+      recipes.addShaped("Modular Controller", 
+      <modularmachinery:blockcontroller>, 
+      [[<forestry:chipsets:1>.withTag({}), <rftools:screen>, <forestry:chipsets:1>.withTag({})],
+      [<modularmachinery:blockcasing>, itemUtils.getItem("appliedenergistics2:controller"), <modularmachinery:blockcasing>], 
+      [null, <modularmachinery:blockcasing>, null]]);
+    } else {
+      recipes.remove(<modularmachinery:blockcontroller>);
+      recipes.addShaped("Modular Controller",
+      <modularmachinery:blockcontroller>,
+      [[<forestry:chipsets:1>.withTag({}), <rftools:screen>, <forestry:chipsets:1>.withTag({})],
+      [<modularmachinery:blockcasing>, <appliedenergistics2:energy_acceptor>, <modularmachinery:blockcasing>],
+      [null, <modularmachinery:blockcasing>, null]]);
+    }
 
 # Machine Casing
     recipes.remove(<modularmachinery:blockcasing>);
@@ -75,7 +84,7 @@ print("--- loading ModularMachinery.zs ---");
     recipes.addShapedMirrored("Machine Circuitry", 
     <modularmachinery:blockcasing:5>, 
     [[null, <immersiveengineering:wirecoil:5>, null],
-    [<modularmachinery:blockcasing>, <forestry:chipsets:3>.withTag({}), <modularmachinery:blockcasing>], 
+    [<modularmachinery:blockcasing>, <forestry:chipsets:3>.withTag({T: 3 as short}), <modularmachinery:blockcasing>], 
     [null, <modularmachinery:blockcasing>, null]]);
 
 # Modularium
