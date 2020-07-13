@@ -166,8 +166,10 @@ print("--- loading ActuallyAdditions.zs ---");
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:item_crystal_empowered:3>);
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:block_crystal_empowered:3>);
 
-	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:item_crystal_empowered:3>, <actuallyadditions:item_crystal:3>, <minecraft:dye>, <extendedcrafting:storage>, <chisel:basalt2:*>, <actuallyadditions:block_misc:2>, 250000, 100, [0.1, 0.0, 0.0]);
-	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:block_crystal_empowered:3>, <actuallyadditions:block_crystal:3>, <minecraft:dye>, <extendedcrafting:storage>, <chisel:basalt2:*>, <actuallyadditions:block_misc:2>, 2500000, 200, [0.1, 0.0, 0.0]);
+for item in <ore:stoneBasalt>.items {
+	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:item_crystal_empowered:3>, <actuallyadditions:item_crystal:3>, <minecraft:dye>, <extendedcrafting:storage>, item, <actuallyadditions:block_misc:2>, 250000, 100, [0.1, 0.0, 0.0]);
+	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:block_crystal_empowered:3>, <actuallyadditions:block_crystal:3>, <minecraft:dye>, <extendedcrafting:storage>, item, <actuallyadditions:block_misc:2>, 2500000, 200, [0.1, 0.0, 0.0]);
+}
 
 # Emeradic
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:item_crystal_empowered:4>);
@@ -218,6 +220,13 @@ print("--- loading ActuallyAdditions.zs ---");
 	mods.actuallyadditions.BallOfFur.addReturn(<immersiveengineering:material:8>, 12);
 	mods.actuallyadditions.BallOfFur.addReturn(<plustic:alumiteingot>, 1);
 
+
+# *======= Ore for Laser =======*
+	mods.actuallyadditions.MiningLens.addStoneOre(<ore:oreBoron>, 250);
+	mods.actuallyadditions.MiningLens.addStoneOre(<ore:oreLithium>, 250);
+	mods.actuallyadditions.MiningLens.addStoneOre(<ore:oreMagnesium>, 250);
+	mods.actuallyadditions.MiningLens.addStoneOre(<ore:oreThorium>, 250);
+	mods.actuallyadditions.MiningLens.addStoneOre(<ore:oreCinnabar>, 250);
 
 # *======= AtomicReconstructor =======*
 

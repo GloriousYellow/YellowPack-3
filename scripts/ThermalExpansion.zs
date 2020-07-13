@@ -2,6 +2,15 @@ import crafttweaker.item.IItemStack;
 #modloaded thermalexpansion
 print("--- loading ThermalExpansion.zs ---");
 
+# Planks/Slabs -> Sticks
+for plank in <ore:plankWood>.items {
+	mods.thermalexpansion.Sawmill.addRecipe(<minecraft:stick> * 6, plank, 500, <thermalfoundation:material:800>, 30);
+}
+
+for slab in <ore:slabWood>.items {
+	mods.thermalexpansion.Sawmill.addRecipe(<minecraft:stick> * 3, slab, 250, <thermalfoundation:material:800>, 15);
+}
+
 # Canola Oil Changes	
 	mods.thermalexpansion.CompressionDynamo.removeFuel(<liquid:refinedcanolaoil>);
 	mods.thermalexpansion.CompressionDynamo.removeFuel(<liquid:crystaloil>);
@@ -185,5 +194,17 @@ print("--- loading ThermalExpansion.zs ---");
 
 # Hardened Cell Frame
 	mods.actuallyadditions.Empowerer.addRecipe(<thermalexpansion:frame:129>, <thermalexpansion:frame:128>, <immersiveengineering:material:2>, <thermalfoundation:material:354>, <thermalfoundation:material:290>, <mekanism:basicblock:8>, 2500000, 200, [0.25, 0.25, 0.29]);
+
+# Remove creative kit crafts (no actual creative conversion kit)
+recipes.removeByRecipeName("thermalexpansion:cell_17");
+recipes.removeByRecipeName("thermalexpansion:cell_16");
+recipes.removeByRecipeName("thermalexpansion:cell_15");
+recipes.removeByRecipeName("thermalexpansion:cell_14");
+recipes.removeByRecipeName("thermalexpansion:cell_18");
+recipes.removeByRecipeName("thermalexpansion:tank_18");
+recipes.removeByRecipeName("thermalexpansion:tank_16");
+recipes.removeByRecipeName("thermalexpansion:tank_17");
+recipes.removeByRecipeName("thermalexpansion:tank_14");
+recipes.removeByRecipeName("thermalexpansion:tank_15");
 
 		print("--- ThermalExpansion.zs initialized ---");

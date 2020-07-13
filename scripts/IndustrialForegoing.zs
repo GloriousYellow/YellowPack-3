@@ -3,7 +3,6 @@ import mods.industrialforegoing.BioReactor;
 import mods.industrialforegoing.ProteinReactor;
 import mods.industrialforegoing.FluidDictionary;
 #modloaded industrialforegoing teslacorelib
-print("--- loading IndustrialForegoing.zs ---");
 
 function fluidDict(ins as string[]) {
 	for one in ins {
@@ -94,14 +93,14 @@ function fluidDict(ins as string[]) {
 	recipes.remove(<industrialforegoing:black_hole_tank>);
 	recipes.addShapedMirrored("Black Hole Tank", <industrialforegoing:black_hole_tank>, 
 	[[<ore:itemRubber>, <actuallyadditions:item_crystal_empowered:3>, <ore:itemRubber>],
-	[<teslacorelib:machine_case>, <botania:blackholetalisman>, <teslacorelib:machine_case>], 
+	[<teslacorelib:machine_case>, <botania:blackholetalisman>.reuse(), <teslacorelib:machine_case>], 
 	[<mekanism:plasticblock:8>, <mekanism:machineblock2:11>.withTag({tier: 3, mekData:{}})|<mekanism:machineblock2:11>.withTag({tier: 3, mekData:{security:0}}), <mekanism:plasticblock:8>]]);
 
 # Black Hole Unit
 	recipes.remove(<industrialforegoing:black_hole_unit>);
 	recipes.addShapedMirrored("Black Hole Unit", <industrialforegoing:black_hole_unit>, 
 	[[<ore:itemRubber>, <actuallyadditions:item_crystal_empowered:3>, <ore:itemRubber>],
-	[<teslacorelib:machine_case>, <botania:blackholetalisman>, <teslacorelib:machine_case>], 
+	[<teslacorelib:machine_case>, <botania:blackholetalisman>.reuse(), <teslacorelib:machine_case>], 
 	[<mekanism:plasticblock:8>, <mekanism:basicblock:6>.withTag({tier: 3})|<mekanism:basicblock:6>.withTag({tier: 3, mekData: {itemCount: 0}}), <mekanism:plasticblock:8>]]);
 
 # Black Hole Controller
@@ -151,4 +150,37 @@ function fluidDict(ins as string[]) {
 	[<ore:plateDenseGold>, <thermalexpansion:frame>, <ore:plateDenseGold>], 
 	[<ore:gearDiamond>, <ore:blockOsmiridium>, <ore:gearDiamond>]]);
 
-	print("--- IndustrialForegoing.zs initialized ---");
+# Simplify Converter Recipes
+	recipes.remove(<industrialforegoing:oredictionary_converter>);
+	recipes.addShaped("Industrialforegoing Oredictionary Converter",
+	<industrialforegoing:oredictionary_converter>, 
+	[[<ore:itemRubber>, <ore:itemRubber>, <ore:itemRubber>], 
+	[<ore:itemRubber>, <ore:oreIron>, <ore:itemRubber>], 
+	[<ore:nuggetIron>, <ore:ingotIron>, <ore:blockIron>]]);
+	
+	recipes.remove(<industrialforegoing:fluiddictionary_converter>);
+	recipes.addShaped("Industrialforegoing Fluiddictionary Converter",
+	<industrialforegoing:fluiddictionary_converter>,
+	[[<ore:itemRubber>, <ore:itemRubber>, <ore:itemRubber>], 
+	[<ore:blockGlass>, <ore:oreIron>, <ore:blockGlass>], 
+	[<minecraft:bucket>, <ore:gearIron>, <minecraft:bucket>]]);
+
+
+# Oredict Belts Recipes
+	recipes.remove(<industrialforegoing:conveyor>);
+	recipes.addShaped(<industrialforegoing:conveyor> * 4, [
+		[<ore:itemRubber>, <ore:itemRubber>, <ore:itemRubber>], 
+		[<ore:ingotIron>, <minecraft:redstone>, <ore:ingotIron>], 
+		[<ore:itemRubber>, <ore:itemRubber>, <ore:itemRubber>]]);
+
+	recipes.remove(<industrialforegoing:conveyor_upgrade>);
+	recipes.addShaped(<industrialforegoing:conveyor_upgrade>, [
+		[<ore:ingotIron>, <ore:itemRubber>, <ore:ingotIron>], 
+		[<ore:ingotIron>, <minecraft:dispenser>, <ore:ingotIron>], 
+		[<ore:ingotIron>, <industrialforegoing:conveyor:*>, <ore:ingotIron>]]);
+	recipes.remove(<industrialforegoing:conveyor_upgrade:1>);
+	
+	recipes.addShaped(<industrialforegoing:conveyor_upgrade:1>, [
+		[<ore:ingotIron>, <ore:itemRubber>, <ore:ingotIron>], 
+		[<ore:ingotIron>, <minecraft:hopper>, <ore:ingotIron>], 
+		[<ore:ingotIron>, <industrialforegoing:conveyor:*>, <ore:ingotIron>]]);

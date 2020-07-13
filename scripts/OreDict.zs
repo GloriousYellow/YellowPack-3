@@ -5,7 +5,26 @@ import crafttweaker.oredict.IOreDictEntry as IOreDictEntry;
 import mods.jei.JEI.removeAndHide as rh;
 print("--- loading OreDict.zs ---");
 	
+# Oredicts for pressure plates
+var pressurePlates as IItemStack[] = [
+	<twilightforest:twilight_oak_plate>,
+	<twilightforest:canopy_plate>,
+	<twilightforest:mangrove_plate>,
+	<twilightforest:dark_plate>,
+	<twilightforest:time_plate>,
+	<twilightforest:trans_plate>,
+	<twilightforest:mine_plate>,
+	<twilightforest:sort_plate>
+];
+
+for item in pressurePlates {
+	<ore:pressurePlateWood>.add(item);
+}
+
+# Fixing Mortar and Pestle oredict from Pam's
+	<ore:pestleAndMortar>.add(<harvestcraft:mortarandpestleitem>);
 	
+# Fixing mushroom-y things
 	<ore:mushroomAny>.add(<harvestcraft:whitemushroomitem>);
 	
 # Removing Pam's in-world Apple from cropApple
@@ -14,6 +33,7 @@ print("--- loading OreDict.zs ---");
 # Cobalt Block issues
 	<ore:oreCobalt>.remove(<tconstruct:metal>);
 	<ore:oreArdite>.remove(<tconstruct:metal>);
+	<ore:oreArdite>.remove(<tconstruct:ore>);
 	
 # Fixing the Mineralis Ritual
 	<ore:oreNickel>.remove(<immersiveengineering:ore:4>);
@@ -106,6 +126,15 @@ print("--- loading OreDict.zs ---");
 
 # Mycelium Oredict
 	<ore:mycelium>.add(<biomesoplenty:grass:8>);
+
+# Biomesoplenty Dirt
+	<ore:dirt>.add([
+		<biomesoplenty:dirt:8>,
+		<biomesoplenty:dirt:9>,
+		<biomesoplenty:dirt:1>,
+		<biomesoplenty:dirt:10>,
+		<biomesoplenty:dirt:2>
+	]);
 
 # Enhanced Ender Ingot
 	<ore:ingotEnderEnhanced>.add(<extendedcrafting:material:48>);
@@ -308,7 +337,6 @@ print("--- loading OreDict.zs ---");
 	granite.add(<quark:world_stone_bricks>);
 	
 	basalt.add(<quark:world_stone_bricks:3>);
-	basalt.add(<quark:basalt:1>);
 	
 	limestone.add(<quark:limestone:1>);
 	limestone.add(<quark:world_stone_bricks:5>);
